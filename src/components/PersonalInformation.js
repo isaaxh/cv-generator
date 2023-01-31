@@ -16,9 +16,8 @@ class PersonalInformation extends Component {
           Photo
         </label>
         <input className='hidden' id='img' type='file' />
-        {/* <Input inputType='file' inputName='Photo' /> */}
         <Input inputType='text' inputName='Address' />
-        <Input inputType='text' inputName='Phone number' />
+        <Input inputType='number' inputName='Phone number' />
         <Input inputType='email' inputName='Email' />
         <textarea
           className='px-3 py-1 mb-2 rounded resize-y'
