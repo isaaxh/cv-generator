@@ -10,13 +10,17 @@ class Button extends Component {
     return {
       children: PropTypes.any,
       buttonName: PropTypes.string,
+      bgColor: PropTypes.string,
+      hoverColor: PropTypes.string,
     };
   }
 
   render() {
-    const { buttonName } = this.props;
+    const { buttonName, bgColor, hoverColor } = this.props;
     return (
-      <button className='bg-zinc-800 text-white px-3 py-2 mb-2 rounded'>
+      <button
+        className={`${bgColor} ${hoverColor} text-white px-3 py-2 mb-2 rounded`}
+      >
         {buttonName}
       </button>
     );

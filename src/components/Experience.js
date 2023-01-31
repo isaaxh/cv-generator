@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Input from "./Input";
 import Button from "./Button";
 
-export default class Education extends Component {
+class Experience extends Component {
   constructor(props) {
     super(props);
   }
@@ -20,10 +20,9 @@ export default class Education extends Component {
     return (
       <div className='flex flex-col'>
         <h1 className='text-xl font-medium mb-4'>{title}</h1>
-        <Input inputType='text' inputName='University name' />
+        <Input inputType='text' inputName='Position' />
+        <Input inputType='text' inputName='Company' />
         <Input inputType='text' inputName='City' />
-        <Input inputType='text' inputName='Degree' />
-        <Input inputType='text' inputName='Subject' />
         <Input inputType='date' inputName='From' />
         <Input inputType='date' inputName='To' />
         <Button
@@ -40,3 +39,5 @@ export default class Education extends Component {
     );
   }
 }
+
+export default Experience;
