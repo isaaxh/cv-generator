@@ -10,12 +10,19 @@ class Input extends Component {
     return {
       children: PropTypes.any,
       inputName: PropTypes.string,
+      inputType: PropTypes.string,
     };
   }
 
   render() {
-    const { inputName } = this.props;
-    return <input className='px-3 py-1 mb-2 rounded' placeholder={inputName} />;
+    const { inputName, inputType } = this.props;
+    return (
+      <input
+        type={inputType}
+        className='px-3 py-1 mb-2 rounded'
+        placeholder={inputName}
+      />
+    );
   }
 }
 
