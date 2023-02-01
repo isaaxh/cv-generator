@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Instance from "./Instance";
 
 class MainBodyCv extends Component {
   render() {
@@ -8,10 +9,10 @@ class MainBodyCv extends Component {
         [&>div>hr]:border-1 [&>div>hr]:border-gray-300 [&>div>h2]:text-blue-900 
       [&>div>h2]:text-md [&>div>h2]:font-semibold [&>div>hr]:pb-2'
       >
-        <div className=''>
+        <div>
           <h2>Description</h2>
           <hr />
-          <p>
+          <p className='text-gray-600'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
             aliquid aspernatur dolore laudantium cumque sunt ut ullam ad
             pariatur iste. Ut accusamus amet hic soluta incidunt velit sequi
@@ -22,10 +23,14 @@ class MainBodyCv extends Component {
         <div>
           <h2>Experience</h2>
           <hr />
+          <Instance />
+          <Instance />
         </div>
         <div>
           <h2>Education</h2>
           <hr />
+          <Instance />
+          <Instance />
         </div>
       </div>
     );
