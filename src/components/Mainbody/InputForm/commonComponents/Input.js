@@ -12,12 +12,12 @@ class Input extends Component {
       children: PropTypes.any,
       placeholder: PropTypes.string,
       inputType: PropTypes.string,
-      onChange: PropTypes.func,
+      handlePersonalChange: PropTypes.func,
     };
   }
 
   handleChange(event) {
-    this.props.onChange(event.target.value);
+    this.props.handlePersonalChange(event.target.value);
   }
 
   render() {

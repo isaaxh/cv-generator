@@ -16,11 +16,12 @@ export default class InputForm extends Component {
       firstName: PropTypes.string,
       lastName: PropTypes.string,
       title: PropTypes.string,
+      handlePersonalChange: PropTypes.func,
     };
   }
 
   render() {
-    const { firstName, lastName, title } = this.props;
+    const { firstName, lastName, title, handlePersonalChange } = this.props;
     return (
       <div className='bg-zinc-100 flex-1 shadow-2xl rounded p-5 h-auto max-w-4xl h-fit-content lg:p-9 '>
         <section className='mb-7'>
@@ -28,7 +29,7 @@ export default class InputForm extends Component {
             firstName={firstName}
             lastName={lastName}
             title={title}
-            onChange={this.handleInputChange}
+            onChange={handlePersonalChange}
           />
         </section>
         <section className='mb-7'>

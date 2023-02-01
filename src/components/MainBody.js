@@ -13,12 +13,11 @@ export default class MainBody extends Component {
         title: "",
       },
     };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handlePersonalChange = (newValue) => {
     this.setState({ ...this.state, personal: { firstName: newValue } });
+    console.log(this.state.personal.firstName);
   };
 
   render() {
@@ -32,7 +31,7 @@ export default class MainBody extends Component {
           firstName={firstName}
           lastName={lastName}
           title={title}
-          onChange={this.handleInputChange}
+          onChange={this.handlePersonalChange}
         />
         <CvTemplate />
       </div>
