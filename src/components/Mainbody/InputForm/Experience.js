@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Input from "./Input";
-import Button from "./Button";
+import Input from "./commonComponents/Input";
+import Button from "./commonComponents/Button";
 
 class Experience extends Component {
   constructor(props) {

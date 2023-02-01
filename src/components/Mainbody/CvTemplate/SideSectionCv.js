@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import profilePic from "../imgs/isaacPic.png";
+import profilePic from "../../../imgs/isaacPic.png";
 
 class SideSectionCv extends Component {
   render() {

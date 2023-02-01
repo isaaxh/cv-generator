@@ -1,15 +1,35 @@
 import React, { Component } from "react";
-import PersonalInformation from "./PersonalInformation";
-import Experience from "./Experience";
-import Education from "./Education";
-import Button from "./Button";
+import PropTypes from "prop-types";
+import PersonalInformation from "./InputForm/PersonalInformation";
+import Experience from "./InputForm/Experience";
+import Education from "./InputForm/Education";
+import Button from "./InputForm/commonComponents/Button";
 
 export default class InputForm extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  static get propTypes() {
+    return {
+      children: PropTypes.any,
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      title: PropTypes.string,
+    };
+  }
+
   render() {
+    const { firstName, lastName, title } = this.props;
     return (
       <div className='bg-zinc-100 flex-1 shadow-2xl rounded p-5 h-auto max-w-4xl h-fit-content lg:p-9 '>
         <section className='mb-7'>
-          <PersonalInformation />
+          <PersonalInformation
+            firstName={firstName}
+            lastName={lastName}
+            title={title}
+            onChange={this.handleInputChange}
+          />
         </section>
         <section className='mb-7'>
           <Experience title='Experience' />

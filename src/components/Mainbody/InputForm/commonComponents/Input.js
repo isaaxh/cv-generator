@@ -4,23 +4,30 @@ import PropTypes from "prop-types";
 class Input extends Component {
   constructor(props) {
     super(props);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   static get propTypes() {
     return {
       children: PropTypes.any,
-      inputName: PropTypes.string,
+      placeholder: PropTypes.string,
       inputType: PropTypes.string,
+      onChange: PropTypes.func,
     };
   }
 
+  handleChange(event) {
+    this.props.onChange(event.target.value);
+  }
+
   render() {
-    const { inputName, inputType } = this.props;
+    const { placeholder, inputType } = this.props;
     return (
       <input
         type={inputType}
         className='px-3 py-1 mb-2 rounded'
-        placeholder={inputName}
+        placeholder={placeholder}
+        onChange={this.handleChange}
       />
     );
   }

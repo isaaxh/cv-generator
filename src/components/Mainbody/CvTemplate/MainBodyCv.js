@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Instance from "./Instance";
+import Instance from "./MainBodyCv/Instance";
 
 class MainBodyCv extends Component {
   render() {

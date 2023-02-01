@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import HeaderCv from "./HeaderCv";
-import MainBodyCv from "./MainBodyCv";
-import SideSectionCv from "./SideSectionCv";
+import HeaderCv from "./CvTemplate/HeaderCv";
+import MainBodyCv from "./CvTemplate/MainBodyCv";
+import SideSectionCv from "./CvTemplate/SideSectionCv";
 
 export default class CvTemplate extends Component {
   render() {

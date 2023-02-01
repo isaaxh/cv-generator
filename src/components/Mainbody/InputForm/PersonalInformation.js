@@ -1,14 +1,34 @@
 import React, { Component } from "react";
-import Input from "./Input";
+import PropTypes from "prop-types";
+import Input from "./commonComponents/Input";
 
 class PersonalInformation extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  static get propTypes() {
+    return {
+      children: PropTypes.any,
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      title: PropTypes.string,
+    };
+  }
+
   render() {
+    const { firstName, lastName, title } = this.props;
     return (
       <div className='flex flex-col '>
         <h1 className='text-xl font-medium mb-4'>Personal Information</h1>
-        <Input inputType='text' inputName='First name' />
-        <Input inputType='text' inputName='Last name' />
-        <Input inputType='text' inputName='Title' />
+        <Input
+          inputType='text'
+          placeholder='First name'
+          value={firstName}
+          onChange={this.handleChange}
+        />
+        <Input inputType='text' placeholder='Last name' inputValue={lastName} />
+        <Input inputType='text' placeholder='Title' inputValue={title} />
         <label
           className='px-3 py-1 mb-2 rounded cursor-pointer bg-white text-gray-400'
           htmlFor='img'

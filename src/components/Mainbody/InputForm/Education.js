@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Input from "./Input";
-import Button from "./Button";
+import Input from "./commonComponents/Input";
+import Button from "./commonComponents/Button";
 
 export default class Education extends Component {
   constructor(props) {
@@ -11,15 +11,13 @@ export default class Education extends Component {
   static get propTypes() {
     return {
       children: PropTypes.any,
-      title: PropTypes.string,
     };
   }
 
   render() {
-    const { title } = this.props;
     return (
       <div className='flex flex-col'>
-        <h1 className='text-xl font-medium mb-4'>{title}</h1>
+        <h1 className='text-xl font-medium mb-4'>Education</h1>
         <Input inputType='text' inputName='University name' />
         <Input inputType='text' inputName='City' />
         <Input inputType='text' inputName='Degree' />
