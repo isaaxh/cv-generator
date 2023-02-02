@@ -13,20 +13,19 @@ class PersonalInformation extends Component {
       firstName: PropTypes.string,
       lastName: PropTypes.string,
       title: PropTypes.string,
-      handlePersonalChange: PropTypes.func,
+      onChange: PropTypes.func,
     };
   }
 
   render() {
-    const { firstName, lastName, title, handlePersonalChange } = this.props;
+    const { lastName, title } = this.props;
     return (
       <div className='flex flex-col '>
         <h1 className='text-xl font-medium mb-4'>Personal Information</h1>
         <Input
           inputType='text'
           placeholder='First name'
-          value={firstName}
-          onChange={handlePersonalChange}
+          onChange={this.props.onChange}
         />
         <Input inputType='text' placeholder='Last name' inputValue={lastName} />
         <Input inputType='text' placeholder='Title' inputValue={title} />

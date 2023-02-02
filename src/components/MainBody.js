@@ -12,6 +12,8 @@ export default class MainBody extends Component {
         lastName: "",
         title: "",
       },
+      experience: {},
+      education: {},
     };
   }
 
@@ -21,19 +23,19 @@ export default class MainBody extends Component {
   };
 
   render() {
-    const { firstName, lastName, title } = this.state;
+    const { firstName, lastName, title } = this.state.personal;
     return (
       <div
         className='bg-zinc-300 p-16 flex flex-col gap-24 lg:flex-row 
                           md:justify-between h-fit-content lg:px-32'
       >
         <InputForm
-          firstName={firstName}
-          lastName={lastName}
-          title={title}
+          {...{ firstName }}
+          {...{ lastName }}
+          {...{ title }}
           onChange={this.handlePersonalChange}
         />
-        <CvTemplate />
+        <CvTemplate {...{ firstName }} />
       </div>
     );
   }

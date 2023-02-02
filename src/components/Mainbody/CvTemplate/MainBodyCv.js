@@ -1,8 +1,22 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Instance from "./MainBodyCv/Instance";
 
 class MainBodyCv extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  static get propTypes() {
+    return {
+      children: PropTypes.any,
+      firstName: PropTypes.string,
+    };
+  }
+
   render() {
+    console.log(this.props.firstName);
+    // const { firstName } = this.props;
     return (
       <div
         className='col-span-2 row-span-5 p-5 [&>div]:mb-5 [&>div>hr]:border-solid 

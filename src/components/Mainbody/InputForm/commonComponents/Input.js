@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 class Input extends Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
   }
 
   static get propTypes() {
@@ -12,13 +11,13 @@ class Input extends Component {
       children: PropTypes.any,
       placeholder: PropTypes.string,
       inputType: PropTypes.string,
-      handlePersonalChange: PropTypes.func,
+      onChange: PropTypes.func,
     };
   }
 
-  handleChange(event) {
-    this.props.handlePersonalChange(event.target.value);
-  }
+  handleChange = (event) => {
+    this.props.onChange(event.target.value);
+  };
 
   render() {
     const { placeholder, inputType } = this.props;

@@ -16,20 +16,20 @@ export default class InputForm extends Component {
       firstName: PropTypes.string,
       lastName: PropTypes.string,
       title: PropTypes.string,
-      handlePersonalChange: PropTypes.func,
+      onChange: PropTypes.func,
     };
   }
 
   render() {
-    const { firstName, lastName, title, handlePersonalChange } = this.props;
+    const { firstName, lastName, title } = this.props;
     return (
       <div className='bg-zinc-100 flex-1 shadow-2xl rounded p-5 h-auto max-w-4xl h-fit-content lg:p-9 '>
         <section className='mb-7'>
           <PersonalInformation
-            firstName={firstName}
-            lastName={lastName}
-            title={title}
-            onChange={handlePersonalChange}
+            {...{ firstName }}
+            {...{ lastName }}
+            {...{ title }}
+            onChange={this.props.onChange}
           />
         </section>
         <section className='mb-7'>
