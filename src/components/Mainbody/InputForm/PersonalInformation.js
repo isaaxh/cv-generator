@@ -10,6 +10,7 @@ class PersonalInformation extends Component {
   static get propTypes() {
     return {
       children: PropTypes.any,
+      inputName: PropTypes.string,
       firstName: PropTypes.string,
       lastName: PropTypes.string,
       title: PropTypes.string,
@@ -18,17 +19,18 @@ class PersonalInformation extends Component {
   }
 
   render() {
-    const { lastName, title } = this.props;
     return (
       <div className='flex flex-col '>
         <h1 className='text-xl font-medium mb-4'>Personal Information</h1>
         <Input
           inputType='text'
           placeholder='First name'
+          inputName='fName'
+          fieldName={this.props.inputName}
           onChange={this.props.onChange}
         />
-        <Input inputType='text' placeholder='Last name' inputValue={lastName} />
-        <Input inputType='text' placeholder='Title' inputValue={title} />
+        <Input inputType='text' placeholder='Last name' inputName='lName' />
+        <Input inputType='text' placeholder='Title' inputName='title' />
         <label
           className='px-3 py-1 mb-2 rounded cursor-pointer bg-white text-gray-400'
           htmlFor='img'

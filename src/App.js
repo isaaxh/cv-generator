@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import MainBody from "./components/MainBody";
+import MainBody from "./components/Mainbody/MainBody";
 
 import Nav from "./components/Nav";
 

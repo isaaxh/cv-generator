@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import HeaderCv from "./CvTemplate/HeaderCv";
-import MainBodyCv from "./CvTemplate/MainBodyCv";
-import SideSectionCv from "./CvTemplate/SideSectionCv";
+import HeaderCv from "./HeaderCv";
+import MainBodyCv from "./MainBodyCv/MainBodyCv";
+import SideSectionCv from "./SideSectionCv";
 
 export default class CvTemplate extends Component {
   constructor(props) {

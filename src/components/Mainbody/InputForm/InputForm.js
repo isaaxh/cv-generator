@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import PersonalInformation from "./InputForm/PersonalInformation";
-import Experience from "./InputForm/Experience";
-import Education from "./InputForm/Education";
-import Button from "./InputForm/commonComponents/Button";
+import PersonalInformation from "./PersonalInformation";
+import Experience from "./Experience";
+import Education from "./Education";
+import Button from "./commonComponents/Button";
 
 export default class InputForm extends Component {
   constructor(props) {
@@ -13,22 +13,18 @@ export default class InputForm extends Component {
   static get propTypes() {
     return {
       children: PropTypes.any,
-      firstName: PropTypes.string,
-      lastName: PropTypes.string,
-      title: PropTypes.string,
+      inputName: PropTypes.string,
       onChange: PropTypes.func,
     };
   }
 
   render() {
-    const { firstName, lastName, title } = this.props;
+    const { inputName } = this.props;
     return (
       <div className='bg-zinc-100 flex-1 shadow-2xl rounded p-5 h-auto max-w-4xl h-fit-content lg:p-9 '>
         <section className='mb-7'>
           <PersonalInformation
-            {...{ firstName }}
-            {...{ lastName }}
-            {...{ title }}
+            {...{ inputName }}
             onChange={this.props.onChange}
           />
         </section>
