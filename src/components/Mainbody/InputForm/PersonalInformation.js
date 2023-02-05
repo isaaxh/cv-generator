@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MainBodyContext from "../MainBodyContext";
 import PropTypes from "prop-types";
 import Input from "./commonComponents/Input";
 
@@ -6,6 +7,8 @@ class PersonalInformation extends Component {
   constructor(props) {
     super(props);
   }
+
+  static contextType = MainBodyContext;
 
   static get propTypes() {
     return {
@@ -19,6 +22,8 @@ class PersonalInformation extends Component {
   }
 
   render() {
+    // const { personal } = this.context.state;
+    const { handlePerChange } = this.context;
     return (
       <div className='flex flex-col '>
         <h1 className='text-xl font-medium mb-4'>Personal Information</h1>
@@ -27,9 +32,14 @@ class PersonalInformation extends Component {
           placeholder='First name'
           inputName='fName'
           fieldName={this.props.inputName}
-          onChange={this.props.onChange}
+          onChange={handlePerChange}
         />
-        <Input inputType='text' placeholder='Last name' inputName='lName' />
+        <Input
+          inputType='text'
+          placeholder='Last name'
+          inputName='lName'
+          onChange={handlePerChange}
+        />
         <Input inputType='text' placeholder='Title' inputName='title' />
         <label
           className='px-3 py-1 mb-2 rounded cursor-pointer bg-white text-gray-400'

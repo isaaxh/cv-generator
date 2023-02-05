@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import MainBodyContext from "../../MainBodyContext";
 import PropTypes from "prop-types";
 
 class Input extends Component {
   constructor(props) {
     super(props);
   }
+
+  static contextType = MainBodyContext;
 
   static get propTypes() {
     return {
@@ -17,14 +20,15 @@ class Input extends Component {
   }
 
   handleChange = (e) => {
-    this.props.inputName = e.target.dataset.name;
-    console.log(this.props.inputName);
     switch (e.target.dataset.name) {
       case "fName":
+        this.context.state.inputName = e.target.dataset.name;
         this.props.onChange(event.target.value);
         break;
       case "lName":
-        console.trace(this.props.onChange(event.target.value));
+        this.context.state.inputName = e.target.dataset.name;
+        console.log(this.context.state.inputName);
+        this.props.onChange(event.target.value);
         break;
       case "title":
         console.trace(console.log("title"));
