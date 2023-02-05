@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import MainBodyContext from "../MainBodyContext";
-import PropTypes from "prop-types";
 import Input from "./commonComponents/Input";
 
 class PersonalInformation extends Component {
@@ -9,13 +8,6 @@ class PersonalInformation extends Component {
   }
 
   static contextType = MainBodyContext;
-
-  static get propTypes() {
-    return {
-      children: PropTypes.any,
-      inputName: PropTypes.string,
-    };
-  }
 
   render() {
     // const { personal } = this.context.state;
@@ -27,7 +19,6 @@ class PersonalInformation extends Component {
           inputType='text'
           placeholder='First name'
           inputName='fName'
-          fieldName={this.props.inputName}
           onChange={handlePerChange}
         />
         <Input
