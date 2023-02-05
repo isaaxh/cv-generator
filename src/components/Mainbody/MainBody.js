@@ -23,20 +23,15 @@ export default class MainBody extends Component {
     // console.log(this.state.inputName);
     switch (this.state.inputName) {
       case "fName":
-        // this.setState({ ...this.state, personal: { firstName: newValue } });
+        this.setState({ ...this.state, personal: { firstName: newValue } });
         break;
       case "lName":
-        console.log(`from the mainbody: ${newValue}`);
-        // code block
+        this.setState({ ...this.state, personal: { lastName: newValue } });
         break;
       case "title":
-        // code block
+        this.setState({ ...this.state, personal: { title: newValue } });
         break;
     }
-  };
-
-  handleChange = () => {
-    console.log("I am a function from ParentContext");
   };
 
   render() {

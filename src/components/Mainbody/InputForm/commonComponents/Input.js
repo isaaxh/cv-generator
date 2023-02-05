@@ -27,11 +27,12 @@ class Input extends Component {
         break;
       case "lName":
         this.context.state.inputName = e.target.dataset.name;
-        console.log(this.context.state.inputName);
         this.props.onChange(event.target.value);
         break;
       case "title":
-        console.trace(console.log("title"));
+        this.context.state.inputName = e.target.dataset.name;
+        this.props.onChange(event.target.value);
+        console.log(this.context.state.inputName);
         break;
     }
   };

@@ -40,7 +40,12 @@ class PersonalInformation extends Component {
           inputName='lName'
           onChange={handlePerChange}
         />
-        <Input inputType='text' placeholder='Title' inputName='title' />
+        <Input
+          inputType='text'
+          placeholder='Title'
+          inputName='title'
+          onChange={handlePerChange}
+        />
         <label
           className='px-3 py-1 mb-2 rounded cursor-pointer bg-white text-gray-400'
           htmlFor='img'
