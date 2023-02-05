@@ -19,23 +19,38 @@ export default class MainBody extends Component {
     };
   }
 
+  // handlePersonalChange = (newValue) => {
+  //   // console.log(this.state.inputName);
+  //   switch (this.state.inputName) {
+  //     case "fName":
+  //       this.setState({ personal: { ...personal, firstName: newValue } });
+  //       break;
+  //     case "lName":
+  //       this.setState({ ...this.state, personal: { lastName: newValue } });
+  //       console.log(this.state.personal.firstName);
+  //       break;
+  //     case "title":
+  //       this.setState({ ...this.state, personal: { title: newValue } });
+  //       break;
+  //   }
+  // };
+
   handlePersonalChange = (newValue) => {
-    // console.log(this.state.inputName);
-    switch (this.state.inputName) {
+    const { inputName, personal } = this.state;
+    switch (inputName) {
       case "fName":
-        this.setState({ ...this.state, personal: { firstName: newValue } });
+        this.setState({ personal: { ...personal, firstName: newValue } });
         break;
       case "lName":
-        this.setState({ ...this.state, personal: { lastName: newValue } });
+        this.setState({ personal: { ...personal, lastName: newValue } });
         break;
       case "title":
-        this.setState({ ...this.state, personal: { title: newValue } });
+        this.setState({ personal: { ...personal, title: newValue } });
         break;
     }
   };
 
   render() {
-    const { firstName } = this.state.personal;
     const { handlePersonalChange } = this;
     return (
       <MainBodyContext.Provider
@@ -49,7 +64,7 @@ export default class MainBody extends Component {
                           md:justify-between h-fit-content lg:px-32'
         >
           <InputForm />
-          <CvTemplate {...{ firstName }} />
+          <CvTemplate />
         </div>
       </MainBodyContext.Provider>
     );

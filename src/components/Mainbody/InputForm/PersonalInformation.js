@@ -10,7 +10,6 @@ class PersonalInformation extends Component {
   static contextType = MainBodyContext;
 
   render() {
-    // const { personal } = this.context.state;
     const { handlePerChange } = this.context;
     return (
       <div className='flex flex-col '>
