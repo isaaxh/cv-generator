@@ -35,7 +35,7 @@ export default class MainBody extends Component {
   };
 
   render() {
-    const { inputName, firstName } = this.state.personal;
+    const { firstName } = this.state.personal;
     const { handlePersonalChange } = this;
     return (
       <MainBodyContext.Provider
@@ -48,7 +48,7 @@ export default class MainBody extends Component {
           className='bg-zinc-300 p-16 flex flex-col gap-24 lg:flex-row 
                           md:justify-between h-fit-content lg:px-32'
         >
-          <InputForm {...{ inputName }} onChange={this.handlePersonalChange} />
+          <InputForm />
           <CvTemplate {...{ firstName }} />
         </div>
       </MainBodyContext.Provider>

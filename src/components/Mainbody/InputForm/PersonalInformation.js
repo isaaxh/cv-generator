@@ -14,10 +14,6 @@ class PersonalInformation extends Component {
     return {
       children: PropTypes.any,
       inputName: PropTypes.string,
-      firstName: PropTypes.string,
-      lastName: PropTypes.string,
-      title: PropTypes.string,
-      onChange: PropTypes.func,
     };
   }
 
