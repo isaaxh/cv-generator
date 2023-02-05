@@ -13,7 +13,7 @@ export default class MainBody extends Component {
         firstName: "",
         lastName: "",
         title: "",
-        photo: "",
+        imgUrl: "",
         address: "",
         phone: "",
         email: "",
@@ -51,13 +51,22 @@ export default class MainBody extends Component {
     }
   };
 
+  handleFileChange = (e) => {
+    const { personal } = this.state;
+    this.setState({
+      personal: { ...personal, imgUrl: URL.createObjectURL(e.target.files[0]) },
+    });
+    console.log(personal.imgUrl);
+  };
+
   render() {
-    const { handlePersonalChange } = this;
+    const { handlePersonalChange, handleFileChange } = this;
     return (
       <MainBodyContext.Provider
         value={{
           state: this.state,
           handlePerChange: handlePersonalChange,
+          handleFileChange: handleFileChange,
         }}
       >
         <div

@@ -9,8 +9,13 @@ class PersonalInformation extends Component {
 
   static contextType = MainBodyContext;
 
+  handleDesChange = (e) => {
+    this.context.state.inputName = "description";
+    this.context.handlePerChange(e.target.value);
+  };
+
   render() {
-    const { handlePerChange } = this.context;
+    const { handlePerChange, handleFileChange } = this.context;
     return (
       <div className='flex flex-col '>
         <h1 className='text-xl font-medium mb-4'>Personal Information</h1>
@@ -38,7 +43,12 @@ class PersonalInformation extends Component {
         >
           Photo
         </label>
-        <input className='hidden' id='img' type='file' />
+        <input
+          className='hidden'
+          id='img'
+          type='file'
+          onChange={handleFileChange}
+        />
         <Input
           inputType='text'
           placeholder='Address'
@@ -64,6 +74,7 @@ class PersonalInformation extends Component {
           cols='30'
           rows='3'
           placeholder='Description'
+          onChange={this.handleDesChange}
         ></textarea>
       </div>
     );

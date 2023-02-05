@@ -1,20 +1,23 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Instance from "./Instance";
+import MainBodyContext from "../../MainBodyContext";
 
 class MainBodyCv extends Component {
   constructor(props) {
     super(props);
   }
 
+  static contextType = MainBodyContext;
+
   static get propTypes() {
     return {
       children: PropTypes.any,
-      firstName: PropTypes.string,
     };
   }
 
   render() {
+    const { description } = this.context.state.personal;
     return (
       <div
         className='col-span-2 row-span-5 p-5 [&>div]:mb-5 [&>div>hr]:border-solid 
@@ -25,11 +28,12 @@ class MainBodyCv extends Component {
           <h2>Description</h2>
           <hr />
           <p className='text-gray-600'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
             aliquid aspernatur dolore laudantium cumque sunt ut ullam ad
             pariatur iste. Ut accusamus amet hic soluta incidunt velit sequi
             optio dolor! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Iure id esse numquam similique nam quia cupiditate officiis
+            elit. Iure id esse numquam similique nam quia cupiditate officiis */}
+            {description.length > 0 ? description : "-"}
           </p>
         </div>
         <div>
