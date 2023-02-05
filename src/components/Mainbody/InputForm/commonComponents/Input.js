@@ -32,7 +32,22 @@ class Input extends Component {
       case "title":
         this.context.state.inputName = e.target.dataset.name;
         this.props.onChange(event.target.value);
-        console.log(this.context.state.inputName);
+        break;
+      case "address":
+        this.context.state.inputName = e.target.dataset.name;
+        this.props.onChange(event.target.value);
+        break;
+      case "phone":
+        this.context.state.inputName = e.target.dataset.name;
+        this.props.onChange(event.target.value);
+        break;
+      case "email":
+        this.context.state.inputName = e.target.dataset.name;
+        this.props.onChange(event.target.value);
+        break;
+      case "description":
+        this.context.state.inputName = e.target.dataset.name;
+        this.props.onChange(event.target.value);
         break;
     }
   };

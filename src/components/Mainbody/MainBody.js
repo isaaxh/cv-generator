@@ -13,27 +13,16 @@ export default class MainBody extends Component {
         firstName: "",
         lastName: "",
         title: "",
+        photo: "",
+        address: "",
+        phone: "",
+        email: "",
+        description: "",
       },
       experience: {},
       education: {},
     };
   }
-
-  // handlePersonalChange = (newValue) => {
-  //   // console.log(this.state.inputName);
-  //   switch (this.state.inputName) {
-  //     case "fName":
-  //       this.setState({ personal: { ...personal, firstName: newValue } });
-  //       break;
-  //     case "lName":
-  //       this.setState({ ...this.state, personal: { lastName: newValue } });
-  //       console.log(this.state.personal.firstName);
-  //       break;
-  //     case "title":
-  //       this.setState({ ...this.state, personal: { title: newValue } });
-  //       break;
-  //   }
-  // };
 
   handlePersonalChange = (newValue) => {
     const { inputName, personal } = this.state;
@@ -46,6 +35,18 @@ export default class MainBody extends Component {
         break;
       case "title":
         this.setState({ personal: { ...personal, title: newValue } });
+        break;
+      case "address":
+        this.setState({ personal: { ...personal, address: newValue } });
+        break;
+      case "phone":
+        this.setState({ personal: { ...personal, phone: newValue } });
+        break;
+      case "email":
+        this.setState({ personal: { ...personal, email: newValue } });
+        break;
+      case "description":
+        this.setState({ personal: { ...personal, description: newValue } });
         break;
     }
   };
