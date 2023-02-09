@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import EduInstance from "./Instances/EduInstance";
-// import ExpInstance from "./Instances/ExpInstance";
+import ExpInstance from "./Instances/ExpInstance";
 import MainBodyContext from "../../MainBodyContext";
 
 class MainBodyCv extends Component {
@@ -19,8 +19,10 @@ class MainBodyCv extends Component {
 
   render() {
     const { description } = this.context.state.personal;
-    const { uniName, city, degree, subject, from, to } =
+    const { uniName, cityEdu, degree, subject, fromEdu, toEdu } =
       this.context.state.education;
+    const { position, company, cityExp, fromExp, toExp } =
+      this.context.state.experience;
     return (
       <div
         className='col-span-2 row-span-5 p-5 [&>div]:mb-5 [&>div>hr]:border-solid 
@@ -42,19 +44,24 @@ class MainBodyCv extends Component {
         <div>
           <h2>Experience</h2>
           <hr />
-          {/* <ExpInstance  /> */}
-          {/* <ExpInstance /> */}
+          <ExpInstance
+            position={position}
+            companyName={company}
+            cityName={cityExp}
+            from={fromExp}
+            to={toExp}
+          />
         </div>
         <div>
           <h2>Education</h2>
           <hr />
           <EduInstance
             uniName={uniName}
-            cityName={city}
+            cityName={cityEdu}
             degreeName={degree}
             subjectName={subject}
-            from={from}
-            to={to}
+            from={fromEdu}
+            to={toEdu}
           />
         </div>
       </div>

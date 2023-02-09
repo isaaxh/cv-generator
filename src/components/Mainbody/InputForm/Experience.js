@@ -30,7 +30,7 @@ class Experience extends Component {
         <Input
           inputType='text'
           placeholder='City'
-          inputName='city'
+          inputName='cityExp'
           onChange={handleExpChange}
         />
         <Input
@@ -40,7 +40,7 @@ class Experience extends Component {
           step='1'
           value='2023'
           placeholder='From'
-          inputName='from'
+          inputName='fromExp'
           onChange={handleExpChange}
         />
         <Input
@@ -50,7 +50,7 @@ class Experience extends Component {
           step='1'
           value='2023'
           placeholder='To'
-          inputName='to'
+          inputName='toExp'
           onChange={handleExpChange}
         />
         <Button

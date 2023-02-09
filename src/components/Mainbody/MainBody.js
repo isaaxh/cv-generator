@@ -22,17 +22,17 @@ export default class MainBody extends Component {
       experience: {
         position: "",
         company: "",
-        city: "",
-        from: "",
-        to: "",
+        cityExp: "",
+        fromExp: "",
+        toExp: "",
       },
       education: {
         uniName: "",
-        city: "",
+        cityEdu: "",
         degree: "",
         subject: "",
-        from: "",
-        to: "",
+        fromEdu: "",
+        toEdu: "",
       },
     };
   }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class Instance extends Component {
+class EduInstance extends Component {
   constructor(props) {
     super(props);
   }
@@ -41,4 +41,4 @@ class Instance extends Component {
   }
 }
 
-export default Instance;
+export default EduInstance;

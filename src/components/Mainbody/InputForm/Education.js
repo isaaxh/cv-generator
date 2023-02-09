@@ -24,7 +24,7 @@ export default class Education extends Component {
         <Input
           inputType='text'
           placeholder='City'
-          inputName='city'
+          inputName='cityEdu'
           onChange={handleEduChange}
         />
         <Input
@@ -46,7 +46,7 @@ export default class Education extends Component {
           step='1'
           value='2023'
           placeholder='From'
-          inputName='from'
+          inputName='fromEdu'
           onChange={handleEduChange}
         />
         <Input
@@ -56,7 +56,7 @@ export default class Education extends Component {
           step='1'
           value='2023'
           placeholder='To'
-          inputName='to'
+          inputName='toEdu'
           onChange={handleEduChange}
         />
 
