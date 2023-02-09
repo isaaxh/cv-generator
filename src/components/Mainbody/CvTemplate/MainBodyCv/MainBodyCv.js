@@ -56,7 +56,6 @@ class MainBodyCv extends Component {
             from={from}
             to={to}
           />
-          <EduInstance />
         </div>
       </div>
     );

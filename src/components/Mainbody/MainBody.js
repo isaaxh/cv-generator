@@ -19,7 +19,13 @@ export default class MainBody extends Component {
         email: "",
         description: "",
       },
-      experience: {},
+      experience: {
+        position: "",
+        company: "",
+        city: "",
+        from: "",
+        to: "",
+      },
       education: {
         uniName: "",
         city: "",
@@ -48,9 +54,18 @@ export default class MainBody extends Component {
     this.setState({ education: { ...education, [inputName]: newValue } });
   };
 
+  handleExperienceChange = (newValue) => {
+    const { inputName, experience } = this.state;
+    this.setState({ experience: { ...experience, [inputName]: newValue } });
+  };
+
   render() {
-    const { handlePersonalChange, handleFileChange, handleEducationChange } =
-      this;
+    const {
+      handlePersonalChange,
+      handleFileChange,
+      handleEducationChange,
+      handleExperienceChange,
+    } = this;
     return (
       <MainBodyContext.Provider
         value={{
@@ -58,6 +73,7 @@ export default class MainBody extends Component {
           handlePerChange: handlePersonalChange,
           handleFileChange: handleFileChange,
           handleEduChange: handleEducationChange,
+          handleExpChange: handleExperienceChange,
         }}
       >
         <div

@@ -1,30 +1,58 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import Input from "./commonComponents/Input";
 import Button from "./commonComponents/Button";
+import MainBodyContext from "../MainBodyContext";
 
 class Experience extends Component {
   constructor(props) {
     super(props);
   }
 
-  static get propTypes() {
-    return {
-      children: PropTypes.any,
-      title: PropTypes.string,
-    };
-  }
+  static contextType = MainBodyContext;
 
   render() {
-    const { title } = this.props;
+    const { handleExpChange } = this.context;
     return (
       <div className='flex flex-col'>
-        <h1 className='text-xl font-medium mb-4'>{title}</h1>
-        <Input inputType='text' inputName='Position' />
-        <Input inputType='text' inputName='Company' />
-        <Input inputType='text' inputName='City' />
-        <Input inputType='date' inputName='From' />
-        <Input inputType='date' inputName='To' />
+        <h1 className='text-xl font-medium mb-4'>Experience</h1>
+        <Input
+          inputType='text'
+          placeholder='Position'
+          inputName='position'
+          onChange={handleExpChange}
+        />
+        <Input
+          inputType='text'
+          placeholder='Company'
+          inputName='company'
+          onChange={handleExpChange}
+        />
+        <Input
+          inputType='text'
+          placeholder='City'
+          inputName='city'
+          onChange={handleExpChange}
+        />
+        <Input
+          inputType='number'
+          min='1900'
+          max='2099'
+          step='1'
+          value='2023'
+          placeholder='From'
+          inputName='from'
+          onChange={handleExpChange}
+        />
+        <Input
+          inputType='number'
+          min='1900'
+          max='2099'
+          step='1'
+          value='2023'
+          placeholder='To'
+          inputName='to'
+          onChange={handleExpChange}
+        />
         <Button
           buttonName='Delete'
           bgColor='bg-zinc-800'
