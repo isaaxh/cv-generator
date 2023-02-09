@@ -40,13 +40,21 @@ export default class Education extends Component {
           onChange={handleEduChange}
         />
         <Input
-          inputType='date'
+          inputType='number'
+          min='1900'
+          max='2099'
+          step='1'
+          value='2023'
           placeholder='From'
           inputName='from'
           onChange={handleEduChange}
         />
         <Input
-          inputType='date'
+          inputType='number'
+          min='1900'
+          max='2099'
+          step='1'
+          value='2023'
           placeholder='To'
           inputName='to'
           onChange={handleEduChange}

@@ -18,6 +18,8 @@ class MainBodyCv extends Component {
 
   render() {
     const { description } = this.context.state.personal;
+    const { uniName, city, degree, subject, from, to } =
+      this.context.state.education;
     return (
       <div
         className='col-span-2 row-span-5 p-5 [&>div]:mb-5 [&>div>hr]:border-solid 
@@ -45,7 +47,14 @@ class MainBodyCv extends Component {
         <div>
           <h2>Education</h2>
           <hr />
-          <Instance />
+          <Instance
+            uniName={uniName}
+            cityName={city}
+            degreeName={degree}
+            subjectName={subject}
+            from={from}
+            to={to}
+          />
           <Instance />
         </div>
       </div>

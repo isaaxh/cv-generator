@@ -11,24 +11,29 @@ class Instance extends Component {
       children: PropTypes.any,
       from: PropTypes.string,
       to: PropTypes.string,
+      uniName: PropTypes.string,
+      degreeName: PropTypes.string,
+      subjectName: PropTypes.string,
       title: PropTypes.string,
       company: PropTypes.string,
-      city: PropTypes.string,
+      cityName: PropTypes.string,
     };
   }
 
   render() {
-    const { from, to, title, company, city } = this.props;
+    const { uniName, degreeName, subjectName, cityName, from, to } = this.props;
     return (
       <div className='flex mb-2'>
         <div className='w-28 pr-5 [&>span]:font-medium'>
           <span>{from}</span> - <span>{to}</span>
         </div>
         <div>
-          <div className='font-medium'>{title}</div>
+          <div className='font-medium'>
+            {uniName}, {cityName}
+          </div>
           <div className='text-gray-600'>
-            `<span>{company}</span>
-            <span>{city}</span>``
+            <div>Degree: {degreeName}</div>
+            <div>Subject: {subjectName}</div>
           </div>
         </div>
       </div>
