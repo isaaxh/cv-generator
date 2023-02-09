@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import EduInstance from "./Instances/EduInstance";
-import ExpInstance from "./Instances/ExpInstance";
+// import ExpInstance from "./Instances/ExpInstance";
 import MainBodyContext from "../../MainBodyContext";
 
 class MainBodyCv extends Component {
@@ -42,8 +42,8 @@ class MainBodyCv extends Component {
         <div>
           <h2>Experience</h2>
           <hr />
-          <ExpInstance />
-          <ExpInstance />
+          {/* <ExpInstance  /> */}
+          {/* <ExpInstance /> */}
         </div>
         <div>
           <h2>Education</h2>
