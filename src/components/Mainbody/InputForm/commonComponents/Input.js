@@ -20,44 +20,16 @@ class Input extends Component {
   }
 
   handleChange = (e) => {
-    switch (e.target.dataset.name) {
-      case "fName":
-        this.context.state.inputName = e.target.dataset.name;
-        this.props.onChange(event.target.value);
-        break;
-      case "lName":
-        this.context.state.inputName = e.target.dataset.name;
-        this.props.onChange(event.target.value);
-        break;
-      case "title":
-        this.context.state.inputName = e.target.dataset.name;
-        this.props.onChange(event.target.value);
-        break;
-      case "address":
-        this.context.state.inputName = e.target.dataset.name;
-        this.props.onChange(event.target.value);
-        break;
-      case "phone":
-        this.context.state.inputName = e.target.dataset.name;
-        this.props.onChange(event.target.value);
-        break;
-      case "email":
-        this.context.state.inputName = e.target.dataset.name;
-        this.props.onChange(event.target.value);
-        break;
-      case "description":
-        this.context.state.inputName = e.target.dataset.name;
-        this.props.onChange(event.target.value);
-        break;
-    }
+    this.context.state.inputName = e.target.dataset.name;
+    this.props.onChange(event.target.value);
   };
 
   render() {
     const { placeholder, inputType, inputName } = this.props;
     return (
       <input
-        type={inputType}
         className='px-3 py-1 mb-2 rounded'
+        type={inputType}
         placeholder={placeholder}
         onChange={this.handleChange}
         data-name={inputName}

@@ -20,35 +20,20 @@ export default class MainBody extends Component {
         description: "",
       },
       experience: {},
-      education: {},
+      education: {
+        uniName: "",
+        city: "",
+        degree: "",
+        subject: "",
+        from: "",
+        to: "",
+      },
     };
   }
 
   handlePersonalChange = (newValue) => {
     const { inputName, personal } = this.state;
-    switch (inputName) {
-      case "fName":
-        this.setState({ personal: { ...personal, firstName: newValue } });
-        break;
-      case "lName":
-        this.setState({ personal: { ...personal, lastName: newValue } });
-        break;
-      case "title":
-        this.setState({ personal: { ...personal, title: newValue } });
-        break;
-      case "address":
-        this.setState({ personal: { ...personal, address: newValue } });
-        break;
-      case "phone":
-        this.setState({ personal: { ...personal, phone: newValue } });
-        break;
-      case "email":
-        this.setState({ personal: { ...personal, email: newValue } });
-        break;
-      case "description":
-        this.setState({ personal: { ...personal, description: newValue } });
-        break;
-    }
+    this.setState({ personal: { ...personal, [inputName]: newValue } });
   };
 
   handleFileChange = (e) => {
@@ -56,17 +41,23 @@ export default class MainBody extends Component {
     this.setState({
       personal: { ...personal, imgUrl: URL.createObjectURL(e.target.files[0]) },
     });
-    console.log(personal.imgUrl);
+  };
+
+  handleEducationChange = (newValue) => {
+    const { inputName, education } = this.state;
+    this.setState({ education: { ...education, [inputName]: newValue } });
   };
 
   render() {
-    const { handlePersonalChange, handleFileChange } = this;
+    const { handlePersonalChange, handleFileChange, handleEducationChange } =
+      this;
     return (
       <MainBodyContext.Provider
         value={{
           state: this.state,
           handlePerChange: handlePersonalChange,
           handleFileChange: handleFileChange,
+          handleEduChange: handleEducationChange,
         }}
       >
         <div

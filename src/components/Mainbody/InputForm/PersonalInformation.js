@@ -22,13 +22,13 @@ class PersonalInformation extends Component {
         <Input
           inputType='text'
           placeholder='First name'
-          inputName='fName'
+          inputName='firstName'
           onChange={handlePerChange}
         />
         <Input
           inputType='text'
           placeholder='Last name'
-          inputName='lName'
+          inputName='lastName'
           onChange={handlePerChange}
         />
         <Input
