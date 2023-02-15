@@ -1,89 +1,82 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import MainBodyContext from "./MainBodyContext";
 import CvTemplate from "./../Mainbody/CvTemplate/CvTemplate";
 import InputForm from "./../Mainbody/InputForm/InputForm";
 
-export default class MainBody extends Component {
-  constructor(props) {
-    super(props);
+export default function MainBody() {
+  const [personal, setPersonal] = useState({
+    firstName: "",
+    lastName: "",
+    title: "",
+    imgUrl: "",
+    address: "",
+    phone: "",
+    email: "",
+    description: "",
+  });
 
-    this.state = {
-      inputName: "",
-      personal: {
-        firstName: "",
-        lastName: "",
-        title: "",
-        imgUrl: "",
-        address: "",
-        phone: "",
-        email: "",
-        description: "",
-      },
-      experience: {
-        position: "",
-        company: "",
-        cityExp: "",
-        fromExp: "",
-        toExp: "",
-      },
-      education: {
-        uniName: "",
-        cityEdu: "",
-        degree: "",
-        subject: "",
-        fromEdu: "",
-        toEdu: "",
-      },
-    };
-  }
+  const [experience, setExperience] = useState({
+    position: "",
+    company: "",
+    cityExp: "",
+    fromExp: "",
+    toExp: "",
+  });
 
-  handlePersonalChange = (newValue) => {
-    const { inputName, personal } = this.state;
-    this.setState({ personal: { ...personal, [inputName]: newValue } });
+  const [education, setEducation] = useState({
+    uniName: "",
+    cityEdu: "",
+    degree: "",
+    subject: "",
+    fromEdu: "",
+    toEdu: "",
+  });
+
+  // const handleInputNameChange = (newValue) => {
+  //   setInputName({ inputName: newValue });
+  // };
+
+  const handlePersonalChange = (fieldName, newValue) => {
+    console.log(fieldName);
+    setPersonal({ ...personal, [fieldName]: newValue });
   };
 
-  handleFileChange = (e) => {
-    const { personal } = this.state;
-    this.setState({
-      personal: { ...personal, imgUrl: URL.createObjectURL(e.target.files[0]) },
+  const handleFileChange = (e) => {
+    setPersonal({
+      ...personal,
+      imgUrl: URL.createObjectURL(e.target.files[0]),
     });
   };
 
-  handleEducationChange = (newValue) => {
-    const { inputName, education } = this.state;
-    this.setState({ education: { ...education, [inputName]: newValue } });
+  const handleEducationChange = (fieldName, newValue) => {
+    setEducation({ ...education, [fieldName]: newValue });
   };
 
-  handleExperienceChange = (newValue) => {
-    const { inputName, experience } = this.state;
-    this.setState({ experience: { ...experience, [inputName]: newValue } });
+  const handleExperienceChange = (fieldName, newValue) => {
+    setExperience({ ...experience, [fieldName]: newValue });
+    console.log(fieldName);
   };
 
-  render() {
-    const {
-      handlePersonalChange,
-      handleFileChange,
-      handleEducationChange,
-      handleExperienceChange,
-    } = this;
-    return (
-      <MainBodyContext.Provider
-        value={{
-          state: this.state,
-          handlePerChange: handlePersonalChange,
-          handleFileChange: handleFileChange,
-          handleEduChange: handleEducationChange,
-          handleExpChange: handleExperienceChange,
-        }}
+  return (
+    <MainBodyContext.Provider
+      value={{
+        statePersonal: personal,
+        stateEducation: education,
+        stateExperience: experience,
+        // handleInputNameChange: handleInputNameChange,
+        handlePerChange: handlePersonalChange,
+        handleFileChange: handleFileChange,
+        handleEduChange: handleEducationChange,
+        handleExpChange: handleExperienceChange,
+      }}
+    >
+      <div
+        className='bg-zinc-300 p-16 flex flex-col gap-24 lg:flex-row 
+                        md:justify-between h-fit-content lg:px-32'
       >
-        <div
-          className='bg-zinc-300 p-16 flex flex-col gap-24 lg:flex-row 
-                          md:justify-between h-fit-content lg:px-32'
-        >
-          <InputForm />
-          <CvTemplate />
-        </div>
-      </MainBodyContext.Provider>
-    );
-  }
+        <InputForm />
+        <CvTemplate />
+      </div>
+    </MainBodyContext.Provider>
+  );
 }
