@@ -4,11 +4,9 @@ import ExpInstance from "./Instances/ExpInstance";
 import MainBodyContext from "../../MainBodyContext";
 
 export default function MainBodyCv() {
-  const { statePersonal, stateEducation, expInstances } =
+  const { statePersonal, expInstances, eduInstances } =
     useContext(MainBodyContext);
   const { description } = statePersonal;
-  const { uniName, cityEdu, degree, subject, fromEdu, toEdu } = stateEducation;
-  // const { position, company, cityExp, fromExp, toExp } = stateExperience;
 
   return (
     <div
@@ -39,19 +37,26 @@ export default function MainBodyCv() {
                 />
               );
             })
-          : null}
+          : "-"}
       </div>
       <div>
         <h2>Education</h2>
         <hr />
-        <EduInstance
-          uniName={uniName}
-          cityName={cityEdu}
-          degreeName={degree}
-          subjectName={subject}
-          from={fromEdu}
-          to={toEdu}
-        />
+        {eduInstances.length > 0
+          ? eduInstances.map((instance) => {
+              return (
+                <EduInstance
+                  key={instance.key}
+                  uniName={instance.uniName}
+                  cityName={instance.cityEdu}
+                  degreeName={instance.degree}
+                  subjectName={instance.subject}
+                  from={instance.fromEdu}
+                  to={instance.toEdu}
+                />
+              );
+            })
+          : "-"}
       </div>
     </div>
   );

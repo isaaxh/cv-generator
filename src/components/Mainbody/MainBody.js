@@ -5,6 +5,8 @@ import InputForm from "./../Mainbody/InputForm/InputForm";
 
 export default function MainBody() {
   const [expInstances, setExpInstances] = useState([]);
+  const [eduInstances, setEduInstances] = useState([]);
+
   // const [currentObject, setCurrentObject] = useState([]);
 
   const [personal, setPersonal] = useState({
@@ -28,6 +30,7 @@ export default function MainBody() {
   });
 
   const [education, setEducation] = useState({
+    key: "",
     uniName: "",
     cityEdu: "",
     degree: "",
@@ -54,21 +57,21 @@ export default function MainBody() {
   const handleExperienceChange = (fieldName, newValue) => {
     setExperience({ ...experience, [fieldName]: newValue });
   };
-  // currentState.position = "";
-  // currentState.cityExp = "";
-  // currentState.fromExp = "";
-  // currentState.company = "";
-  // currentState.toExp = "";
 
-  const handleAddingInstance = (newInstance) => {
+  const handleAddingInstance = (newInstance, arrayName) => {
     newInstance.key = Date.now();
-    setExpInstances([...expInstances, newInstance]);
+    if (arrayName === "exp") {
+      setExpInstances([...expInstances, newInstance]);
+    } else {
+      setEduInstances([...eduInstances, newInstance]);
+    }
   };
 
   return (
     <MainBodyContext.Provider
       value={{
         expInstances: expInstances,
+        eduInstances: eduInstances,
         statePersonal: personal,
         stateEducation: education,
         stateExperience: experience,

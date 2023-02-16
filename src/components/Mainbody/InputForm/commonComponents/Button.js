@@ -1,12 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import MainBodyContext from "../../MainBodyContext.js";
 
-export default function Button({ buttonName, bgColor, hoverColor, onClick }) {
-  const { stateExperience } = useContext(MainBodyContext);
-
+export default function Button({
+  buttonName,
+  bgColor,
+  hoverColor,
+  onClick,
+  instanceObject,
+  arrayName,
+}) {
   const handleClick = () => {
-    onClick(stateExperience);
+    onClick(instanceObject, arrayName);
   };
 
   return (
@@ -25,4 +29,5 @@ Button.propTypes = {
   hoverColor: PropTypes.string,
   onClick: PropTypes.func,
   instanceObject: PropTypes.object,
+  arrayName: PropTypes.string,
 };

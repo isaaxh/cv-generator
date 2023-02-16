@@ -58,6 +58,7 @@ export default function Experience() {
         hoverColor='hover:bg-zinc-600'
         onClick={handleAddingInstance}
         instanceObject={stateExperience}
+        arrayName='exp'
       />
     </div>
   );
