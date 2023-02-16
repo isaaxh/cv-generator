@@ -15,6 +15,8 @@ export default function Button({
       onClick(instanceAddObject, arrayName);
     } else if (btnName === "Delete") {
       onClick(instanceDeleteObject.key, arrayName);
+    } else if (btnName === "Reset") {
+      onClick();
     }
   };
 

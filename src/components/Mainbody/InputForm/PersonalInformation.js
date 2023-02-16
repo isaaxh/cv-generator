@@ -3,7 +3,8 @@ import MainBodyContext from "../MainBodyContext";
 import Input from "./commonComponents/Input";
 
 export default function PersonalInformation() {
-  const { handlePerChange, handleFileChange } = useContext(MainBodyContext);
+  const { handlePerChange, handleFileChange, statePersonal } =
+    useContext(MainBodyContext);
 
   const handleDesChange = (e) => {
     handlePerChange("description", e.target.value);
@@ -15,6 +16,7 @@ export default function PersonalInformation() {
       <Input
         inputType='text'
         placeholder='First name'
+        inputValue={statePersonal.firstName}
         inputName='firstName'
         onChange={handlePerChange}
       />
@@ -22,12 +24,14 @@ export default function PersonalInformation() {
         inputType='text'
         placeholder='Last name'
         inputName='lastName'
+        inputValue={statePersonal.lastName}
         onChange={handlePerChange}
       />
       <Input
         inputType='text'
         placeholder='Title'
         inputName='title'
+        inputValue={statePersonal.title}
         onChange={handlePerChange}
       />
       <label
@@ -46,18 +50,21 @@ export default function PersonalInformation() {
         inputType='text'
         placeholder='Address'
         inputName='address'
+        inputValue={statePersonal.address}
         onChange={handlePerChange}
       />
       <Input
         inputType='number'
         placeholder='Phone number'
         inputName='phone'
+        inputValue={statePersonal.phone}
         onChange={handlePerChange}
       />
       <Input
         inputType='email'
         placeholder='Email'
         inputName='email'
+        inputValue={statePersonal.email}
         onChange={handlePerChange}
       />
       <textarea
@@ -67,6 +74,7 @@ export default function PersonalInformation() {
         cols='30'
         rows='3'
         placeholder='Description'
+        value={statePersonal.description}
         onChange={handleDesChange}
       ></textarea>
     </div>

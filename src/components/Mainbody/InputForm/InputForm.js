@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import PersonalInformation from "./PersonalInformation";
 import Experience from "./Experience";
 import Education from "./Education";
 import Button from "./commonComponents/Button";
+import MainBodyContext from "../MainBodyContext";
 
 export default function InputForm() {
+  const { resetForm } = useContext(MainBodyContext);
+
   return (
     <div className='bg-zinc-100 flex-1 shadow-2xl rounded p-5 h-auto max-w-4xl h-fit-content lg:p-9 '>
       <section className='mb-7'>
@@ -31,6 +34,7 @@ export default function InputForm() {
           buttonName='Reset'
           bgColor='bg-red-600'
           hoverColor='hover:bg-red-700'
+          onClick={resetForm}
         />
       </div>
     </div>

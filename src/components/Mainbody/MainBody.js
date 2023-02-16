@@ -7,8 +7,6 @@ export default function MainBody() {
   const [expInstances, setExpInstances] = useState([]);
   const [eduInstances, setEduInstances] = useState([]);
 
-  // const [currentObject, setCurrentObject] = useState([]);
-
   const [personal, setPersonal] = useState({
     firstName: "",
     lastName: "",
@@ -127,6 +125,36 @@ export default function MainBody() {
     }
   };
 
+  const handleResetForm = () => {
+    setPersonal({
+      firstName: "",
+      lastName: "",
+      title: "",
+      imgUrl: "",
+      address: "",
+      phone: "",
+      email: "",
+      description: "",
+    });
+    setExperience({
+      key: "",
+      position: "",
+      company: "",
+      cityExp: "",
+      fromExp: "",
+      toExp: "",
+    });
+    setEducation({
+      key: "",
+      uniName: "",
+      cityEdu: "",
+      degree: "",
+      subject: "",
+      fromEdu: "",
+      toEdu: "",
+    });
+  };
+
   return (
     <MainBodyContext.Provider
       value={{
@@ -142,6 +170,7 @@ export default function MainBody() {
         handleFileChange: handleFileChange,
         handleEduChange: handleEducationChange,
         handleExpChange: handleExperienceChange,
+        resetForm: handleResetForm,
       }}
     >
       <div
