@@ -4,6 +4,9 @@ import CvTemplate from "./../Mainbody/CvTemplate/CvTemplate";
 import InputForm from "./../Mainbody/InputForm/InputForm";
 
 export default function MainBody() {
+  const [expInstances, setExpInstances] = useState([]);
+  // const [currentObject, setCurrentObject] = useState([]);
+
   const [personal, setPersonal] = useState({
     firstName: "",
     lastName: "",
@@ -16,6 +19,7 @@ export default function MainBody() {
   });
 
   const [experience, setExperience] = useState({
+    key: "",
     position: "",
     company: "",
     cityExp: "",
@@ -32,12 +36,7 @@ export default function MainBody() {
     toEdu: "",
   });
 
-  // const handleInputNameChange = (newValue) => {
-  //   setInputName({ inputName: newValue });
-  // };
-
   const handlePersonalChange = (fieldName, newValue) => {
-    console.log(fieldName);
     setPersonal({ ...personal, [fieldName]: newValue });
   };
 
@@ -54,16 +53,26 @@ export default function MainBody() {
 
   const handleExperienceChange = (fieldName, newValue) => {
     setExperience({ ...experience, [fieldName]: newValue });
-    console.log(fieldName);
+  };
+  // currentState.position = "";
+  // currentState.cityExp = "";
+  // currentState.fromExp = "";
+  // currentState.company = "";
+  // currentState.toExp = "";
+
+  const handleAddingInstance = (newInstance) => {
+    newInstance.key = Date.now();
+    setExpInstances([...expInstances, newInstance]);
   };
 
   return (
     <MainBodyContext.Provider
       value={{
+        expInstances: expInstances,
         statePersonal: personal,
         stateEducation: education,
         stateExperience: experience,
-        // handleInputNameChange: handleInputNameChange,
+        handleAddingInstance: handleAddingInstance,
         handlePerChange: handlePersonalChange,
         handleFileChange: handleFileChange,
         handleEduChange: handleEducationChange,

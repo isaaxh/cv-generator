@@ -4,7 +4,8 @@ import Button from "./commonComponents/Button";
 import MainBodyContext from "../MainBodyContext";
 
 export default function Experience() {
-  const { handleExpChange } = useContext(MainBodyContext);
+  const { handleExpChange, handleAddingInstance, stateExperience } =
+    useContext(MainBodyContext);
   return (
     <div className='flex flex-col'>
       <h1 className='text-xl font-medium mb-4'>Experience</h1>
@@ -55,6 +56,8 @@ export default function Experience() {
         buttonName='Add'
         bgColor='bg-zinc-800'
         hoverColor='hover:bg-zinc-600'
+        onClick={handleAddingInstance}
+        instanceObject={stateExperience}
       />
     </div>
   );
