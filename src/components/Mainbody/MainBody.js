@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MainBodyContext from "./MainBodyContext";
 import CvTemplate from "./../Mainbody/CvTemplate/CvTemplate";
 import InputForm from "./../Mainbody/InputForm/InputForm";
+import jsPDF from "jspdf";
 
 export default function MainBody() {
   const [expInstances, setExpInstances] = useState([]);
@@ -155,6 +156,16 @@ export default function MainBody() {
     });
   };
 
+  const generatePDF = () => {
+    const doc = new jsPDF("p", "pt", "a4");
+
+    doc.html(document.querySelector("#cv-content"), {
+      callback: function (pdf) {
+        pdf.save("mycv.pdf");
+      },
+    });
+  };
+
   return (
     <MainBodyContext.Provider
       value={{
@@ -171,10 +182,11 @@ export default function MainBody() {
         handleEduChange: handleEducationChange,
         handleExpChange: handleExperienceChange,
         resetForm: handleResetForm,
+        generatePDF: generatePDF,
       }}
     >
       <div
-        className='bg-zinc-300 p-16 flex flex-col gap-24 lg:flex-row 
+        className='bg-zinc-300 p-16 flex flex-col gap-24 xl:flex-row 
                         md:justify-between h-fit-content lg:px-32'
       >
         <InputForm />

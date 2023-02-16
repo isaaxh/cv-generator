@@ -6,10 +6,10 @@ import Button from "./commonComponents/Button";
 import MainBodyContext from "../MainBodyContext";
 
 export default function InputForm() {
-  const { resetForm } = useContext(MainBodyContext);
+  const { resetForm, generatePDF } = useContext(MainBodyContext);
 
   return (
-    <div className='bg-zinc-100 flex-1 shadow-2xl rounded p-5 h-auto max-w-4xl h-fit-content lg:p-9 '>
+    <div className='bg-zinc-100 flex-1 shadow-2xl rounded p-5 h-auto max-w-3xl h-fit-content lg:p-9 '>
       <section className='mb-7'>
         <PersonalInformation />
       </section>
@@ -24,6 +24,7 @@ export default function InputForm() {
           buttonName='Generate PDF'
           bgColor='bg-green-600'
           hoverColor='hover:bg-green-700'
+          onClick={generatePDF}
         />
         <Button
           buttonName='Load example'
