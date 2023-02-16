@@ -4,8 +4,12 @@ import Button from "./commonComponents/Button";
 import MainBodyContext from "../MainBodyContext";
 
 export default function Education() {
-  const { handleEduChange, stateEducation, handleAddingInstance } =
-    useContext(MainBodyContext);
+  const {
+    handleEduChange,
+    stateEducation,
+    handleAddingInstance,
+    handleDeleteInstance,
+  } = useContext(MainBodyContext);
   return (
     <div className='flex flex-col'>
       <h1 className='text-xl font-medium mb-4'>Education</h1>
@@ -64,13 +68,16 @@ export default function Education() {
         buttonName='Delete'
         bgColor='bg-zinc-800'
         hoverColor='hover:bg-zinc-600'
+        instanceDeleteObject={stateEducation}
+        onClick={handleDeleteInstance}
+        arrayName='edu'
       />
       <Button
         buttonName='Add'
         bgColor='bg-zinc-800'
         hoverColor='hover:bg-zinc-600'
         onClick={handleAddingInstance}
-        instanceObject={stateEducation}
+        instanceAddObject={stateEducation}
         arrayName='edu'
       />
     </div>

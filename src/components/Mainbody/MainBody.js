@@ -69,19 +69,17 @@ export default function MainBody() {
     }
   };
 
-  // const handleDeleteInstance = (instanceId, instanceType) => {
-  //   if (instanceType === "edu") {
-  //     setEduInstances(
-  //       eduInstances.filter((instance) => instance.key !== instanceId)
-  //     );
-  //   }
-  //   // else {
-  //   //   const newInstances = eduInstances.filter(
-  //   //     (instance) => instance.key === instanceId
-  //   //   );
-  //   //   setEduInstances([...eduInstances, newInstances]);
-  //   // }
-  // };
+  const handleDeleteInstance = (instanceId, instanceType) => {
+    if (instanceType === "exp") {
+      setExpInstances(
+        expInstances.filter((instance) => instance.key !== instanceId)
+      );
+    } else {
+      setEduInstances(
+        eduInstances.filter((instance) => instance.key !== instanceId)
+      );
+    }
+  };
 
   const resetStateObject = (stateObject) => {
     if (stateObject === experience) {
@@ -107,7 +105,6 @@ export default function MainBody() {
   };
 
   const handleRetrieveInstance = (instanceType, instanceObject) => {
-    console.log(instanceObject);
     if (instanceType === "edu") {
       setEducation({
         key: instanceObject.key,
@@ -139,6 +136,7 @@ export default function MainBody() {
         stateEducation: education,
         stateExperience: experience,
         handleAddingInstance: handleAddingInstance,
+        handleDeleteInstance: handleDeleteInstance,
         handleRetrieveInstance: handleRetrieveInstance,
         handlePerChange: handlePersonalChange,
         handleFileChange: handleFileChange,

@@ -6,17 +6,22 @@ export default function Button({
   bgColor,
   hoverColor,
   onClick,
-  instanceObject,
+  instanceAddObject,
+  instanceDeleteObject,
   arrayName,
 }) {
-  const handleClick = () => {
-    onClick(instanceObject, arrayName);
+  const handleClick = (btnName) => {
+    if (btnName === "Add") {
+      onClick(instanceAddObject, arrayName);
+    } else if (btnName === "Delete") {
+      onClick(instanceDeleteObject.key, arrayName);
+    }
   };
 
   return (
     <button
       className={`${bgColor} ${hoverColor} text-white px-3 py-2 mb-2 rounded`}
-      onClick={handleClick}
+      onClick={() => handleClick(buttonName)}
     >
       {buttonName}
     </button>
@@ -28,6 +33,7 @@ Button.propTypes = {
   bgColor: PropTypes.string,
   hoverColor: PropTypes.string,
   onClick: PropTypes.func,
-  instanceObject: PropTypes.object,
+  instanceAddObject: PropTypes.object,
+  instanceDeleteObject: PropTypes.object,
   arrayName: PropTypes.string,
 };
