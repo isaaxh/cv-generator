@@ -69,19 +69,19 @@ export default function MainBody() {
     }
   };
 
-  const handleDeleteInstance = (instanceId, instanceType) => {
-    if (instanceType === "edu") {
-      setEduInstances(
-        eduInstances.filter((instance) => instance.key !== instanceId)
-      );
-    }
-    // else {
-    //   const newInstances = eduInstances.filter(
-    //     (instance) => instance.key === instanceId
-    //   );
-    //   setEduInstances([...eduInstances, newInstances]);
-    // }
-  };
+  // const handleDeleteInstance = (instanceId, instanceType) => {
+  //   if (instanceType === "edu") {
+  //     setEduInstances(
+  //       eduInstances.filter((instance) => instance.key !== instanceId)
+  //     );
+  //   }
+  //   // else {
+  //   //   const newInstances = eduInstances.filter(
+  //   //     (instance) => instance.key === instanceId
+  //   //   );
+  //   //   setEduInstances([...eduInstances, newInstances]);
+  //   // }
+  // };
 
   const resetStateObject = (stateObject) => {
     if (stateObject === experience) {
@@ -106,10 +106,29 @@ export default function MainBody() {
     }
   };
 
-  // const handleRetrieveInstance = (instanceId, instanceType) => {
-  //   if (instanceType === "exp") {
-
-  //   }}
+  const handleRetrieveInstance = (instanceType, instanceObject) => {
+    console.log(instanceObject);
+    if (instanceType === "edu") {
+      setEducation({
+        key: instanceObject.key,
+        uniName: instanceObject.uniName,
+        cityEdu: instanceObject.cityEdu,
+        degree: instanceObject.degree,
+        subject: instanceObject.subject,
+        fromEdu: instanceObject.fromEdu,
+        toEdu: instanceObject.toEdu,
+      });
+    } else {
+      setExperience({
+        key: instanceObject.key,
+        position: instanceObject.position,
+        company: instanceObject.company,
+        cityExp: instanceObject.cityExp,
+        fromExp: instanceObject.fromExp,
+        toExp: instanceObject.toExp,
+      });
+    }
+  };
 
   return (
     <MainBodyContext.Provider
@@ -120,7 +139,7 @@ export default function MainBody() {
         stateEducation: education,
         stateExperience: experience,
         handleAddingInstance: handleAddingInstance,
-        handleDeleteInstance: handleDeleteInstance,
+        handleRetrieveInstance: handleRetrieveInstance,
         handlePerChange: handlePersonalChange,
         handleFileChange: handleFileChange,
         handleEduChange: handleEducationChange,

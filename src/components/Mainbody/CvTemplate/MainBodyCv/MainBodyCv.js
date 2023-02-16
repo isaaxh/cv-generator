@@ -4,7 +4,7 @@ import ExpInstance from "./Instances/ExpInstance";
 import MainBodyContext from "../../MainBodyContext";
 
 export default function MainBodyCv() {
-  const { statePersonal, expInstances, eduInstances, handleDeleteInstance } =
+  const { statePersonal, expInstances, eduInstances, handleRetrieveInstance } =
     useContext(MainBodyContext);
   const { description } = statePersonal;
 
@@ -31,11 +31,13 @@ export default function MainBodyCv() {
             return (
               <ExpInstance
                 key={instance.key}
+                stateObject={instance}
                 position={instance.position}
                 companyName={instance.company}
                 cityName={instance.cityExp}
                 from={instance.fromExp}
                 to={instance.toExp}
+                handleRetrieve={handleRetrieveInstance}
               />
             );
           })
@@ -57,6 +59,7 @@ export default function MainBodyCv() {
             return (
               <EduInstance
                 key={instance.key}
+                stateObject={instance}
                 id={instance.key}
                 uniName={instance.uniName}
                 cityName={instance.cityEdu}
@@ -64,7 +67,7 @@ export default function MainBodyCv() {
                 subjectName={instance.subject}
                 from={instance.fromEdu}
                 to={instance.toEdu}
-                handleDelete={handleDeleteInstance}
+                handleRetrieve={handleRetrieveInstance}
               />
             );
           })
