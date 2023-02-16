@@ -9,7 +9,7 @@ export default function ExpInstance({
   to,
 }) {
   return (
-    <div className='flex mb-2'>
+    <div className='flex mb-2 hover:bg-gray-200'>
       <div className='w-28 pr-5 [&>span]:font-medium truncate'>
         <span>{from}</span> - <span>{to}</span>
       </div>

@@ -62,10 +62,54 @@ export default function MainBody() {
     newInstance.key = Date.now();
     if (arrayName === "exp") {
       setExpInstances([...expInstances, newInstance]);
+      resetStateObject(experience);
     } else {
       setEduInstances([...eduInstances, newInstance]);
+      resetStateObject(education);
     }
   };
+
+  const handleDeleteInstance = (instanceId, instanceType) => {
+    if (instanceType === "edu") {
+      setEduInstances(
+        eduInstances.filter((instance) => instance.key !== instanceId)
+      );
+    }
+    // else {
+    //   const newInstances = eduInstances.filter(
+    //     (instance) => instance.key === instanceId
+    //   );
+    //   setEduInstances([...eduInstances, newInstances]);
+    // }
+  };
+
+  const resetStateObject = (stateObject) => {
+    if (stateObject === experience) {
+      setExperience({
+        key: "",
+        position: "",
+        company: "",
+        cityExp: "",
+        fromExp: "",
+        toExp: "",
+      });
+    } else {
+      setEducation({
+        key: "",
+        uniName: "",
+        cityEdu: "",
+        degree: "",
+        subject: "",
+        fromEdu: "",
+        toEdu: "",
+      });
+    }
+  };
+
+  // const handleRetrieveInstance = (instanceId, instanceType) => {
+  //   if (instanceType === "exp") {
+
+  //   }}
 
   return (
     <MainBodyContext.Provider
@@ -76,6 +120,7 @@ export default function MainBody() {
         stateEducation: education,
         stateExperience: experience,
         handleAddingInstance: handleAddingInstance,
+        handleDeleteInstance: handleDeleteInstance,
         handlePerChange: handlePersonalChange,
         handleFileChange: handleFileChange,
         handleEduChange: handleEducationChange,

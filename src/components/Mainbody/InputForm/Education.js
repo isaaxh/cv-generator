@@ -13,24 +13,28 @@ export default function Education() {
         inputType='text'
         placeholder='University name'
         inputName='uniName'
+        inputValue={stateEducation.uniName}
         onChange={handleEduChange}
       />
       <Input
         inputType='text'
         placeholder='City'
         inputName='cityEdu'
+        inputValue={stateEducation.cityEdu}
         onChange={handleEduChange}
       />
       <Input
         inputType='text'
         placeholder='Degree'
         inputName='degree'
+        inputValue={stateEducation.degree}
         onChange={handleEduChange}
       />
       <Input
         inputType='text'
         placeholder='Subject'
         inputName='subject'
+        inputValue={stateEducation.subject}
         onChange={handleEduChange}
       />
       <Input
@@ -41,6 +45,7 @@ export default function Education() {
         value='2023'
         placeholder='From'
         inputName='fromEdu'
+        inputValue={stateEducation.fromEdu}
         onChange={handleEduChange}
       />
       <Input
@@ -51,6 +56,7 @@ export default function Education() {
         value='2023'
         placeholder='To'
         inputName='toEdu'
+        inputValue={stateEducation.toEdu}
         onChange={handleEduChange}
       />
 

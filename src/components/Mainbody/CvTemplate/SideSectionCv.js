@@ -13,17 +13,17 @@ export default function SideSectionCv() {
         src={imgUrl.length > 0 ? imgUrl : imgPlaceholder}
         alt='imgs'
       />
-      <h2 className='font-bold'>Personal Details</h2>
+      <h2 className='font-bold truncate'>Personal Details</h2>
       <hr className='border-solid border-1 border-gray-400 pb-5' />
-      <h3>Address</h3>
+      <h3 className='truncate'>Address</h3>
       <p className='break-all'>
         {address.length > 0
           ? address
           : "Lorem ipsum dolor sit, amet consectetur lorem"}
       </p>
-      <h3>Phone number</h3>
+      <h3 className='truncate'>Phone number</h3>
       <p className='break-all'>{phone.length > 0 ? phone : "0123456789"}</p>
-      <h3>Email</h3>
+      <h3 className='truncate'>Email</h3>
       <p className='break-all'>
         {email.length > 0 ? email : "email@gmail.com"}
       </p>

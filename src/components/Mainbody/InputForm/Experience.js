@@ -13,18 +13,21 @@ export default function Experience() {
         inputType='text'
         placeholder='Position'
         inputName='position'
+        inputValue={stateExperience.position}
         onChange={handleExpChange}
       />
       <Input
         inputType='text'
         placeholder='Company'
         inputName='company'
+        inputValue={stateExperience.company}
         onChange={handleExpChange}
       />
       <Input
         inputType='text'
         placeholder='City'
         inputName='cityExp'
+        inputValue={stateExperience.cityExp}
         onChange={handleExpChange}
       />
       <Input
@@ -35,6 +38,7 @@ export default function Experience() {
         value='2023'
         placeholder='From'
         inputName='fromExp'
+        inputValue={stateExperience.fromExp}
         onChange={handleExpChange}
       />
       <Input
@@ -45,6 +49,7 @@ export default function Experience() {
         value='2023'
         placeholder='To'
         inputName='toExp'
+        inputValue={stateExperience.toExp}
         onChange={handleExpChange}
       />
       <Button
