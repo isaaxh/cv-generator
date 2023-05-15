@@ -18,9 +18,8 @@ export default function MainBodyCv() {
         <h2>Description</h2>
         <hr />
         <p className='text-gray-600 break-all'>
-          {description.length > 0
-            ? description
-            : "lorem ipsum dolor sit amet, consectetur lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor"}
+          {description.length > 0 ? description : null}
+          {/* lorem ipsum dolor sit amet, consectetur lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor */}
         </p>
       </div>
       <div>
