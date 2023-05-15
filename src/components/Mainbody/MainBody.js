@@ -156,6 +156,37 @@ export default function MainBody() {
     });
   };
 
+  const loadExample = () => {
+    setPersonal({
+      firstName: "John",
+      lastName: "Smith",
+      title: "Junior Developer",
+      imgUrl: "",
+      address: "123 Fake St., Cityville, Countryland, US",
+      phone: "+123456789",
+      email: "johnsmith@example.com",
+      description:
+        "As a junior developer, I am a dedicated and enthusiastic professional with a strong passion for software development. my knowledge and stay up-to-date with industry trends. With a strong work ethic and a positive attitude, I am ready to make a valuable contribution to your team.",
+    });
+    setExperience({
+      key: "01",
+      position: "Junior Developer",
+      company: "ABC Co.",
+      cityExp: "LA",
+      fromExp: "2021",
+      toExp: "2022",
+    });
+    setEducation({
+      key: "02",
+      uniName: "ABC School of LA",
+      cityEdu: "LA",
+      degree: "BCs. Computer Science",
+      subject: "AI",
+      fromEdu: "2021",
+      toEdu: "2023",
+    });
+  };
+
   const generatePDF = () => {
     const doc = new jsPDF("p", "pt", "a4");
 
@@ -181,6 +212,7 @@ export default function MainBody() {
         handleFileChange: handleFileChange,
         handleEduChange: handleEducationChange,
         handleExpChange: handleExperienceChange,
+        loadExample: loadExample,
         resetForm: handleResetForm,
         generatePDF: generatePDF,
       }}

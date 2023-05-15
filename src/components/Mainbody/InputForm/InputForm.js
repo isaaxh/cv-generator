@@ -6,7 +6,11 @@ import Button from "./commonComponents/Button";
 import MainBodyContext from "../MainBodyContext";
 
 export default function InputForm() {
-  const { resetForm, generatePDF } = useContext(MainBodyContext);
+  const { loadExample, resetForm, generatePDF } = useContext(MainBodyContext);
+
+  const handleLoadExampleClick = () => {
+    loadExample();
+  };
 
   return (
     <div className='bg-zinc-100 flex-1 shadow-2xl rounded p-5 h-auto max-w-3xl h-fit-content lg:p-9 '>
@@ -30,6 +34,7 @@ export default function InputForm() {
           buttonName='Load example'
           bgColor='bg-orange-600'
           hoverColor='hover:bg-orange-700'
+          onClick={handleLoadExampleClick}
         />
         <Button
           buttonName='Reset'
